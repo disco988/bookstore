@@ -8,7 +8,7 @@ const BOOK = {
   price: 18,
   currency: "$",
   tagline:
-    "A novel about getting lost in your own city — and the maps we draw for ourselves.",
+    "A novel about getting lost in your own city - and the maps we draw for ourselves.",
   blurb:
     "When cartographer Ida loses the sight in one eye, the world she spent her whole life measuring and ordering begins to blur. Instead of fighting the chaos, she learns to read it anew. A quiet, precise story about how you regain your bearings in life not by returning to the old map, but by drawing a different one.",
   meta: ["Novel", "328 pages", "First edition", "2026"],
