@@ -22,7 +22,10 @@ export default function App() {
   function handleBuy(e) {
     e.preventDefault();
 
+
+ 
     const cleanEmail = email.trim();
+    
     if (!cleanEmail || !cleanEmail.includes("@")) {
       setStatus({
         type: "error",
