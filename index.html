@@ -23,16 +23,21 @@
       })(window);
       fpr("init", { cid: "014waxs2" });
       fpr("click");
+
+      function enableUrlTracking() {
+        _fprom = window._fprom || [];
+        window._fprom = _fprom;
+        _fprom.push(["url_tracking", true]);
+        if (window.$FPROM) {
+          $FPROM.trackVisitor({ url_tracking: true });
+        } else if (window.fpr) fpr("urlTracking");
+      }
     </script>
-    <script src="https://cdn.firstpromoter.com/fpr.js" async></script>
-    <script type="text/javascript">
-      _fprom = window._fprom || [];
-      window._fprom = _fprom;
-      _fprom.push(["url_tracking", true]);
-      if (window.$FPROM) {
-        $FPROM.trackVisitor({ url_tracking: true });
-      } else if (window.fpr) fpr("urlTracking");
-    </script>
+    <script
+      src="https://cdn.firstpromoter.com/fpr.js"
+      async
+      onload="enableUrlTracking()"
+    ></script>
   </head>
   <body>
     <div id="root"></div>

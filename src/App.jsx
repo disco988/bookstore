@@ -19,13 +19,17 @@ export default function App() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState(null);
 
+  const generateId = () => {
+    const timestamp = Date.now().toString(36);
+    const random = Math.random.toString(36).substring(2, 7);
+    return `${timestamp}-${random}`;
+  };
+
   function handleBuy(e) {
     e.preventDefault();
 
-
- 
     const cleanEmail = email.trim();
-    
+
     if (!cleanEmail || !cleanEmail.includes("@")) {
       setStatus({
         type: "error",
@@ -34,7 +38,7 @@ export default function App() {
       return;
     }
 
-    window.fpr("referral", { email: cleanEmail });
+    window.fpr("referral", { email: cleanEmail, uid: generateId() });
 
     window.location.href = STRIPE_LINK;
   }
